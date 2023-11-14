@@ -9,13 +9,13 @@ function App() {
 
 			<section>
 				
-				<Category categoryName={"Staff"} />
-				<Category categoryName={"Engins - Outils"} />
-				<Category categoryName={"Consommable"} />
-				<Category categoryName={"Installation"} />
-				<Category categoryName={"Energie"} />
-				<Category categoryName={"Materiaux"} />
-				<Category categoryName={"Transport"} />
+				<Category category={"staff"} categoryName={"Staff"} />
+				<Category category={"engins-outils"} categoryName={"Engins - Outils"} />
+				<Category category={"consommable"} categoryName={"Consommable"} />
+				<Category category={"installation"} categoryName={"Installation"} />
+				<Category category={"energie"} categoryName={"Energie"} />
+				<Category category={"materaux"} categoryName={"Materiaux"} />
+				<Category category={"transport"} categoryName={"Transport"} />
 
 			</section>
 		</section>

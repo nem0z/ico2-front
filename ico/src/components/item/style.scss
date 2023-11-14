@@ -1,0 +1,48 @@
+@import "../../styles/var.scss";
+
+.item {
+    width: 100%;
+    margin-top: 1rem;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    > input, > select {
+        height: 1rem;
+
+        padding: 0.5rem;
+        border: 1px solid $gray-light;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &[readOnly] {
+            background-color: $gray-light;
+        }
+    }
+
+    > select {
+        height: 2rem;
+        padding: 0 .5rem;
+    }
+
+    #label, #fe {
+        width: 15%;
+    }
+
+    #unit, #qty {
+        width: 5%;
+    }
+
+    #feValue, #total {
+        width: 10%;
+    }
+}

@@ -1,6 +1,7 @@
 import './style.scss';
+import Item from '../item/item';
 
-function Category({categoryName}) {
+function Category({category, categoryName}) {
 
 	return (
 		<section className='category'>
@@ -9,6 +10,10 @@ function Category({categoryName}) {
 				<div className='btnAdd'>
 					<span>+</span>
 				</div>
+			</div>
+
+			<div>
+				<Item category={category}/>
 			</div>
 
 		</section>
