@@ -1,33 +1,37 @@
 import './style.scss';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import Item from '../item/item';
 
 function Category({category, categoryName}) {
 
-	const [lines, setLines] = useState([{ total: 0 }]);
-	const btnAdd = useRef(null);
+	const [lines, setLines] = useState([]);
 
-	useEffect(() => {
-		const handler = () => setLines(prev => [...prev, { total: 0 }]);
-		btnAdd.current?.addEventListener('click', handler);
-		
-		return () => btnAdd.current?.removeEventListener('click', handler);
-	}, []);
+	const addLine = () => setLines(prev => [...prev, { total: 0 }]);
+
+	const removeLine = index => {
+		setLines(prev => prev.filter((_, i) => i !== index));
+	};
 
 	return (
 		<section className='category'>
 			<div className='titleContainer'>
 				<h2>{categoryName}</h2>
-				<div className='btnAdd' ref={btnAdd}>
+				<div className='btnAdd' onClick={addLine}>
 					<span>+</span>
 				</div>
 			</div>
 
 			<div>
 				{
-					lines.map((_, i) => <Item key={i} category={category}/>)
+					lines.map((_, i) => 
+						<Item 
+							key={i} 
+							category={category}
+							onRemove={() => removeLine(i)} 
+						/>
+					)
 				}
 			</div>
 
