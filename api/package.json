@@ -1,0 +1,12 @@
+{
+  "name": "fake-api",
+  "version": "1.0.0",
+  "description": "A fake api to feed ico2 with data",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nem0z",
+  "license": "ISC"
+}
