@@ -1,7 +1,18 @@
 import './styles/App.scss';
+
+import { useEffect, useState } from 'react';
+
 import Category from './components/category/category';
 
+import { getCategories } from '../client/fakeClient.js';
+
 function App() {
+
+	const [categories, setCategories] = useState([]);
+
+	useEffect(() => {
+		getCategories().then(setCategories);
+	}, []);
 
 	return (
 		<section>
@@ -9,13 +20,11 @@ function App() {
 
 			<section>
 				
-				<Category category={"staff"} categoryName={"Staff"} />
-				<Category category={"engins-outils"} categoryName={"Engins - Outils"} />
-				<Category category={"consommable"} categoryName={"Consommable"} />
-				<Category category={"installation"} categoryName={"Installation"} />
-				<Category category={"energie"} categoryName={"Energie"} />
-				<Category category={"materaux"} categoryName={"Materiaux"} />
-				<Category category={"transport"} categoryName={"Transport"} />
+				{
+					categories.map(c => 
+						<Category key={c.id} category={c.id} categoryName={c.name} />
+					)
+				}
 
 			</section>
 		</section>
