@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { getFe, getFeUnits } from '../../../client/fakeClient.js';
 
-function Item({category, onCalc}) {
+function Item({category, onRemove, onCalc}) {
 
 	const labelRef = useRef(null);
 
@@ -67,6 +67,8 @@ function Item({category, onCalc}) {
 			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
 
 			<input type="text" id="total" value={`${total} k.co²`} onChange={calc} readOnly />
+
+			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
 	);
 }
