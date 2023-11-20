@@ -57,7 +57,7 @@ function Item({category, onRemove, onCalc}) {
 				{
 					feUnits.length > 0 ?
 					feUnits.map(x =>
-						<option key={x.id} value={x.value}>{x.unit}</option>
+						<option key={x.unit} value={x.value}>{x.unit}</option>
 					) : <option value="">---</option>
 				}
 			</select>
