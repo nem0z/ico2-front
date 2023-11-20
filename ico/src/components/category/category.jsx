@@ -23,7 +23,7 @@ function Category({category, categoryName}) {
 				</div>
 			</div>
 
-			<div class="categoryItems">
+			<div className="categoryItems">
 				{
 					lines.map((_, i) => 
 						<Item 
