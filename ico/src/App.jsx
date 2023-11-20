@@ -36,7 +36,7 @@ function App() {
 	}, [lines]);
 
 	return (
-		<section>
+		<section className='ICO'>
 			<h1>ICO²</h1>
 
 			<section>
@@ -54,7 +54,7 @@ function App() {
 
 			</section>
 			<section>
-				Total : { Math.round(total) }
+				Total : { Math.round(total) } k.co²
 			</section>
 		</section>
 	);
