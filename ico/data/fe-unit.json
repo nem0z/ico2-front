@@ -5,5 +5,10 @@
     { "fe": 3, "unit": "Litre", "value": "1.95" },
     { "fe": 3, "unit": "K.Euro", "value": "7.2" },
     { "fe": 4, "unit": "Litre", "value": "2.06" },
-    { "fe": 4, "unit": "K.Euro", "value": "10.5" }
+    { "fe": 4, "unit": "K.Euro", "value": "10.5" },
+
+    { "fe": 5, "unit": "Litre", "value": "3.1" },
+    { "fe": 6, "unit": "kWh", "value": "0.0520" },
+    { "fe": 6, "unit": "K.Euro", "value": "336" },
+    { "fe": 7, "unit": "kWh PCS", "value": "0.213" }
 ]

@@ -3,5 +3,9 @@
     { "id": 1, "label": "Acier inox", "category": 5 },
     { "id": 2, "label": "Aluminium", "category": 5 },
     { "id": 3, "label": "Peinture", "category": 5 },
-    { "id": 4, "label": "Produit chimique", "category": 5 }
+    { "id": 4, "label": "Produit chimique", "category": 5 },
+
+    { "id": 5, "label": "Gazol", "category": 4 },
+    { "id": 6, "label": "Electricité", "category": 4 },
+    { "id": 7, "label": "Gaz naturel", "category": 4 }
 ]
