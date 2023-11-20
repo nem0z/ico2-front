@@ -1,16 +1,39 @@
 import './style.scss';
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-function Item({category, onCalc}) {
+import { getFe, getFeUnits } from '../../../client/fakeClient.js';
+
+function Item({category, onRemove, onCalc}) {
 
 	const labelRef = useRef(null);
-	const feRef = useRef(null);
-	const unitRef = useRef(null);
-	const qtyRef = useRef(null);
 
-	const feValueRef = useRef(null);
-	const totalValueRef = useRef(null);
+	const [fe, setFe] = useState([]);
+	const [feSelected, setFeSelected] = useState(null);
+	const [feValue, setFeValue] = useState(0);
+	const [qty, setQty] = useState(1);
+	const [total, setTotal] = useState(0);
+
+
+	const [feUnits, setFeUnits] = useState([]);
+
+	useEffect(() => {
+		getFe(category).then(setFe);
+	}, []);
+
+	useEffect(() => {
+		if(!feSelected) return;
+
+		getFeUnits(feSelected)
+			.then(data => {
+				setFeUnits(data);
+				setFeValue(data[0]?.value);
+			});
+	}, [feSelected]);
+
+	useEffect(() => {
+		setTotal(parseFloat(feValue) * parseFloat(qty));
+	}, [feValue, qty]);
 
 	const calc = () => {
 		const res = feRef.current?.value ?? 0 * qtyRef.current?.value ?? 0;
@@ -21,24 +44,31 @@ function Item({category, onCalc}) {
 		<section className='item'>
 			<input type="text" id="label" placeholder='Libellé de la ligne' ref={labelRef} />
 
-			<select id="fe" ref={feRef}>
+			<select id="fe" onChange={e => setFeSelected(e.target.value)}>
 				<option value="">---</option>
-				<option value="acier-carbone">Acier carbone</option>
-				<option value="acier-inox">Acier inox</option>
-				<option value="peinture-huile">Peinture à l'huile</option>
-				<option value="chimique">Produit chimique</option>
+				{
+					fe.map(x =>
+						<option key={x.id} value={x.id}>{x.label}</option>
+					)
+				}
 			</select>
 
-			<select id="unit" ref={unitRef}>
-				<option value="kg">Kg</option>
-				<option value="euro">Euro (k.Euro)</option>
+			<select id="unit" onChange={e => setFeValue(e.target.value)}>
+				{
+					feUnits.length > 0 ?
+					feUnits.map(x =>
+						<option key={x.id} value={x.value}>{x.unit}</option>
+					) : <option value="">---</option>
+				}
 			</select>
 
-			<input type="text" id="feValue" defaultValue="0.0" ref={feValueRef} readOnly />
+			<input type="text" id="feValue" value={`${feValue} k.co²`} readOnly />
 
-			<input type="text" id="qty" defaultValue="1" ref={qtyRef} />
+			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
 
-			<input type="text" id="total" defaultValue="0" ref={totalValueRef} onChange={calc} readOnly />
+			<input type="text" id="total" value={`${total} k.co²`} onChange={calc} readOnly />
+
+			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
 	);
 }

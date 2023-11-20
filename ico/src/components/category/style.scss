@@ -27,11 +27,16 @@
             background-color: $primary-color;
             
             border-radius: 50%;
+            cursor: pointer;
             
             > span {
               font-size: 2.5rem;
               font-weight: 800;
             }
           }
+    }
+
+    .categoryItems {
+      padding-right: 3rem;
     }
 }
