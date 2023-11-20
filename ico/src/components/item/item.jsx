@@ -35,10 +35,9 @@ function Item({category, onRemove, onCalc}) {
 		setTotal(parseFloat(feValue) * parseFloat(qty));
 	}, [feValue, qty]);
 
-	const calc = () => {
-		const res = feRef.current?.value ?? 0 * qtyRef.current?.value ?? 0;
-		onCalc(res);
-	};
+	useEffect(() => {
+		onCalc({ total: total });
+	}, [total])
 
 	return (
 		<section className='item'>
@@ -66,7 +65,7 @@ function Item({category, onRemove, onCalc}) {
 
 			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
 
-			<input type="text" id="total" value={`${total} k.co²`} onChange={calc} readOnly />
+			<input type="text" id="total" value={`${Math.round(total)} k.co²`} readOnly />
 
 			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
