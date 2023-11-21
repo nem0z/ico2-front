@@ -1,42 +1,45 @@
-@import "../../styles/var.scss";
+@import "/src/styles/var.scss";
 
-.category {
-    width: 80vw;
-    margin-bottom: 10vh;
+.selectCategories {
+  width: 100%;
+  min-width: 80vw;
 
-    .titleContainer {
-        padding: .5rem 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 2rem 0;
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
 
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+      appearance: none;
+      margin-right: 8px;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #333;
+      border-radius: 4px;
+      transition: background-color 0.1s;
+
+      &:hover {
+        border-color: #2196F3;
+      }
+
+      &:checked {
+        background-color: #2196F3;
+        border-color: #2196F3;
+      }
+
+      &:checked:hover {
         background-color: white;
-        color: $primary-color;
-
-        .btnAdd {
-            height: 3rem;
-            width: 3rem;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: white;
-            background-color: $primary-color;
-            
-            border-radius: 50%;
-            cursor: pointer;
-            
-            > span {
-              font-size: 2.5rem;
-              font-weight: 800;
-            }
-          }
+      }
     }
-
-    .categoryItems {
-      padding-right: 3rem;
-    }
+  }
 }
