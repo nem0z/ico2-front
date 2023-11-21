@@ -18,7 +18,9 @@ function App() {
 	}
 
 	useEffect(() => {
-		getCategories().then(setCategories);
+		getCategories().then(categories => 
+			setCategories(categories.sort((a,b) => a.order - b.order))	
+		);
 	}, []);
 
 	useEffect(() => {
