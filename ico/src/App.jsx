@@ -3,6 +3,7 @@ import './styles/App.scss';
 import { useEffect, useState } from 'react';
 
 import Category from './components/category/category';
+import SelectCategories from './components/selectCategories/selectCategories';
 
 import { getCategories } from '/client/fakeClient.js';
 import { sumOf } from './utils.js';
@@ -16,6 +17,8 @@ function App() {
 	const calc = (category, lines) => {
 		setLines(prev => prev.map((x, c) => category == c ? lines : x));
 	}
+
+	const updateCategories = c => setCategories(c);
 
 	useEffect(() => {
 		getCategories().then(categories => 
@@ -40,6 +43,8 @@ function App() {
 	return (
 		<section className='ICO'>
 			<h1>ICO²</h1>
+
+			<SelectCategories onSelect={updateCategories} />
 
 			<section>
 				
