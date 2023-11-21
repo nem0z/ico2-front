@@ -2,7 +2,7 @@ import './style.scss';
 
 import { useEffect, useRef, useState } from 'react';
 
-import { getFe, getFeUnits } from '../../../client/fakeClient.js';
+import { getFe, getFeUnits } from '/client/fakeClient.js';
 
 function Item({category, onRemove, onCalc}) {
 
