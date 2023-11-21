@@ -1,11 +1,14 @@
-[
-    { "id": 0, "label": "Acier carbon", "category": 5 },
-    { "id": 1, "label": "Acier inox", "category": 5 },
-    { "id": 2, "label": "Aluminium", "category": 5 },
-    { "id": 3, "label": "Peinture", "category": 5 },
-    { "id": 4, "label": "Produit chimique", "category": 5 },
+[    
+    { "id": 0, "label": "Acier carbon", "category": 4 },
+    { "id": 1, "label": "Acier inox", "category": 4 },
+    { "id": 2, "label": "Aluminium", "category": 4 },
+    { "id": 3, "label": "Peinture", "category": 4 },
+    { "id": 4, "label": "Produit chimique", "category": 4 },
 
-    { "id": 5, "label": "Gazol", "category": 4 },
-    { "id": 6, "label": "Electricité", "category": 4 },
-    { "id": 7, "label": "Gaz naturel", "category": 4 }
+    { "id": 5, "label": "Gazol", "category": 5 },
+    { "id": 6, "label": "Electricité", "category": 3 },
+    { "id": 7, "label": "Gaz naturel", "category": 5 },
+
+    { "id": 8, "label": "Essence (E10, SP-95, SP-98)", "category": 0 },
+    { "id": 9, "label": "Gazol", "category": 0 }
 ]
