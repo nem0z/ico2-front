@@ -2,8 +2,8 @@ import './style.scss';
 
 import { useEffect, useState } from 'react';
 
-import Item from '../item/item';
-import { sumOf } from '../../utils.js';
+import Item from '/src/components/item/item';
+import { sumOf } from '/src/utils.js';
 
 
 function Category({category, categoryName, onCalc}) {

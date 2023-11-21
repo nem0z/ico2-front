@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import Category from './components/category/category';
 
-import { getCategories } from '../client/fakeClient.js';
+import { getCategories } from '/client/fakeClient.js';
 import { sumOf } from './utils.js';
 
 function App() {
