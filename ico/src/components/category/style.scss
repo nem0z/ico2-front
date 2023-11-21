@@ -12,8 +12,8 @@
         align-items: center;
         justify-content: space-between;
 
-        background-color: white;
-        color: $primary-color;
+        background-color: $ortec-color;
+        color: $background-color;
 
         .btnAdd {
             height: 3rem;
@@ -23,8 +23,8 @@
             align-items: center;
             justify-content: center;
 
-            color: white;
-            background-color: $primary-color;
+            color: $background-color;
+            background-color: $text-color;
             
             border-radius: 50%;
             cursor: pointer;
