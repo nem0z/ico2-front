@@ -2,9 +2,8 @@
     { "id": 0, "name": "Staff" },
     { "id": 1, "name": "Engins - Outils" },
     { "id": 2, "name": "Consommable" },
-    { "id": 3, "name": "Installation" },
-    { "id": 4, "name": "Energie" },
-    { "id": 5, "name": "Materiaux" },
-    { "id": 6, "name": "Transport" },
-    { "id": 7, "name": "Sous-traitance" }
+    { "id": 3, "name": "Installation - Bâtiment" },
+    { "id": 4, "name": "Materiaux" },
+    { "id": 5, "name": "Transport - Déplacement" },
+    { "id": 6, "name": "Sous-traitance" }
 ]
