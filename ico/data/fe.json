@@ -1,14 +1,41 @@
 [    
-    { "id": 0, "label": "Acier carbon", "category": 4 },
-    { "id": 1, "label": "Acier inox", "category": 4 },
-    { "id": 2, "label": "Aluminium", "category": 4 },
-    { "id": 3, "label": "Peinture", "category": 4 },
-    { "id": 4, "label": "Produit chimique", "category": 4 },
+    { "id": 0, "label": "Local Francais", "category": 0 },
+    { "id": 1, "label": "Expat Francais", "category": 0 },
+    { "id": 2, "label": "Expat TCN", "category": 0 },
+    { "id": 3, "label": "Local Africain", "category": 0 },
 
-    { "id": 5, "label": "Gazol", "category": 5 },
-    { "id": 6, "label": "Electricité", "category": 3 },
-    { "id": 7, "label": "Gaz naturel", "category": 5 },
+    { "id": 4, "label": "Trajet avion", "category": 0 },
+    { "id": 5, "label": "Trajet bateau", "category": 0 },
+    { "id": 6, "label": "Trajet voiture (thermique)", "category": 0 },
+    { "id": 7, "label": "Trajet voiture (electrique)", "category": 0 },
 
-    { "id": 8, "label": "Essence (E10, SP-95, SP-98)", "category": 0 },
-    { "id": 9, "label": "Gazol", "category": 0 }
+
+    { "id": 8, "label": "Electricité", "category": 1 },
+    { "id": 9, "label": "Gaz naturel", "category": 1 },
+
+
+    { "id": 10, "label": "Fabrication engin", "category": 2 },
+    { "id": 11, "label": "Location engin", "category": 2 },
+
+    { "id": 12, "label": "Gazoil", "category": 2 },
+    { "id": 13, "label": "XTL", "category": 2 },
+
+
+    { "id": 14, "label": "EPI", "category": 3 },
+    { "id": 15, "label": "Petit outillage", "category": 3 },
+
+
+    { "id": 16, "label": "Acier carbone", "category": 4 },
+    { "id": 17, "label": "Acier inox", "category": 4 },
+    { "id": 18, "label": "Peinture", "category": 4 },
+    { "id": 19, "label": "Produit chimique", "category": 4 },
+
+
+    { "id": 20, "label": "Transport par bateaux", "category": 5 },
+    { "id": 21, "label": "Transport par avions", "category": 5 },
+    { "id": 22, "label": "Transport par camions", "category": 5 },
+
+    { "id": 23, "label": "Travail bureau", "category": 6 },
+    { "id": 24, "label": "Travail chantier", "category": 6 },
+    { "id": 25, "label": "Fabrication", "category": 6 }
 ]
