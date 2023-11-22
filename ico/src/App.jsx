@@ -42,7 +42,13 @@ function App() {
 
 	return (
 		<section className='ICO'>
-			<h1>ICO²</h1>
+			<h1>
+				<span className='bold'> I</span>mpact 
+				<span className='bold'> C</span>arbon 
+				<span className='bold'> O</span>rtec 
+				<span className='bold'> O</span>ptimization 
+				<span className='bold'> (ICO²)</span>
+			</h1>
 
 			<SelectCategories onSelect={updateCategories} />
 
