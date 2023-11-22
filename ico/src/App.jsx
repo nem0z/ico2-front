@@ -60,7 +60,7 @@ function App() {
 				}
 
 			</section>
-			<section>
+			<section className='total'>
 				Total : { Math.round(total) } k.co²
 			</section>
 		</section>
