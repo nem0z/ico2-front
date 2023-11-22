@@ -22,9 +22,8 @@ function SelectCategories({onSelect}) {
 		<section className='selectCategories'>
 			{ 
 				categories.map(c => 
-					<label>
+					<label key={c.id}>
 						<input
-							key={c.id}
 							type="checkbox"
 							checked={c.checked}
 							onChange={() => handleCheck(c.id)}
