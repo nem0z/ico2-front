@@ -1,9 +1,9 @@
 [
-    { "id": 0, "name": "Staff", "order": 1 },
-    { "id": 3, "name": "Installation", "order": 2 },
-    { "id": 1, "name": "Engin - Outil", "order": 3 },
-    { "id": 2, "name": "Consommable", "order": 4 },
-    { "id": 4, "name": "Materiaux", "order": 5 },
-    { "id": 5, "name": "Transport", "order": 6 },
-    { "id": 6, "name": "Sous-traitance", "order": 7 }
+    { "id": 0,  "name": "Staff",             "order": 1 },
+    { "id": 3,  "name": "Installation",      "order": 2 },
+    { "id": 1,  "name": "Engin - Outil",     "order": 3 },
+    { "id": 2,  "name": "Consommable",       "order": 4 },
+    { "id": 4,  "name": "Materiaux",         "order": 5 },
+    { "id": 5,  "name": "Transport",         "order": 6 },
+    { "id": 6,  "name": "Sous-traitance",    "order": 7 }
 ]
