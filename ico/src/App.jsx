@@ -53,7 +53,6 @@ function App() {
 			<SelectCategories onSelect={updateCategories} />
 
 			<section>
-				
 				{
 					categories.map(c => 
 						<Category 
@@ -64,8 +63,8 @@ function App() {
 						/>
 					)
 				}
-
 			</section>
+
 			<section className='total'>
 				<p><span className='bold'>{ Math.round(total) }</span> k.co²</p>
 			</section>
