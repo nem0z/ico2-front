@@ -13,8 +13,6 @@ function Item({category, onRemove, onCalc}) {
 	const [feValue, setFeValue] = useState(0);
 	const [qty, setQty] = useState(1);
 	const [total, setTotal] = useState(0);
-
-
 	const [feUnits, setFeUnits] = useState([]);
 
 	useEffect(() => {
