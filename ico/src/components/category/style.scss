@@ -4,8 +4,9 @@
     width: 80vw;
     margin-bottom: 10vh;
 
-    .titleContainer {
-        padding: .5rem 3rem;
+    .banner {
+        height: 10vh;
+        padding: 1rem 3rem;
 
         display: flex;
         flex-direction: row;
@@ -16,6 +17,17 @@
 
         background-color: $ortec-color;
         color: $background-color;
+
+        .titleContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-evenly;
+
+          > * {
+            margin-top: 5px;
+          }
+        }
 
         .btnAdd {
             height: 2rem;

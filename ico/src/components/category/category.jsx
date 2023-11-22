@@ -25,9 +25,11 @@ function Category({category, categoryName, onCalc}) {
 
 	return (
 		<section className='category'>
-			<div className='titleContainer'>
-				<h2>{ categoryName }</h2>
-				<span>{ Math.round(total) }</span>
+			<div className='banner'>
+				<div className='titleContainer'>
+					<h2>{ categoryName }</h2>
+					<p><span className='bold'>{Math.round(total)}</span> k.co²</p>
+				</div>
 				<div className='btnAdd' onClick={addLine}>
 					<span>+</span>
 				</div>
