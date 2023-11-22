@@ -18,8 +18,6 @@ function App() {
 		setLines(prev => prev.map((x, c) => category == c ? lines : x));
 	}
 
-	const updateCategories = c => setCategories(c);
-
 	useEffect(() => {
 		getCategories().then(categories => 
 			setCategories(categories.sort((a,b) => a.order - b.order))	
@@ -50,10 +48,9 @@ function App() {
 				<span className='bold'> (ICO²)</span>
 			</h1>
 
-			<SelectCategories onSelect={updateCategories} />
+			<SelectCategories onSelect={setCategories} />
 
 			<section>
-				
 				{
 					categories.map(c => 
 						<Category 
@@ -64,8 +61,8 @@ function App() {
 						/>
 					)
 				}
-
 			</section>
+
 			<section className='total'>
 				<p><span className='bold'>{ Math.round(total) }</span> k.co²</p>
 			</section>

@@ -13,8 +13,6 @@ function Item({category, onRemove, onCalc}) {
 	const [feValue, setFeValue] = useState(0);
 	const [qty, setQty] = useState(1);
 	const [total, setTotal] = useState(0);
-
-
 	const [feUnits, setFeUnits] = useState([]);
 
 	useEffect(() => {
@@ -62,9 +60,7 @@ function Item({category, onRemove, onCalc}) {
 			</select>
 
 			<input type="text" id="feValue" value={`${feValue} k.co²`} readOnly />
-
 			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
-
 			<input type="text" id="total" value={`${Math.round(total)} k.co²`} readOnly />
 
 			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
