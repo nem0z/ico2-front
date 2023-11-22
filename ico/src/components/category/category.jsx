@@ -3,6 +3,7 @@ import './style.scss';
 import { useEffect, useState } from 'react';
 
 import Item from '/src/components/item/item';
+
 import { sumOf } from '/src/utils.js';
 
 
@@ -12,14 +13,11 @@ function Category({category, categoryName, onCalc}) {
 	const [total, setTotal] = useState(0);
 
 	const addLine = () => setLines(prev => [...prev, { total: 0 }]);
-
 	const removeLine = index => setLines(prev => prev.filter((_, i) => i !== index));
-
 	const handleLine = (index, line) => setLines(prev => prev.map((l, i) => i==index ? line : l));
 
 	useEffect(() => {
 		setTotal(sumOf(lines, "total"));
-
 		onCalc(lines);
 	}, [lines]);
 
@@ -30,6 +28,7 @@ function Category({category, categoryName, onCalc}) {
 					<h2>{ categoryName }</h2>
 					<p><span className='bold'>{Math.round(total)}</span> k.co²</p>
 				</div>
+				
 				<div className='btnAdd' onClick={addLine}>
 					<span>+</span>
 				</div>
