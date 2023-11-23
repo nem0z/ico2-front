@@ -13,6 +13,9 @@
     > input, > select {
         height: 1rem;
 
+        background-color: $background-color;
+        color: $text-color;
+
         padding: 0.5rem;
         border: 1px solid $gray-light;
         border-radius: 5px;
@@ -21,7 +24,7 @@
 
         &:focus {
             outline: none;
-            border-color: $primary-color;
+            border-color: $text-color;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -36,28 +39,34 @@
     }
 
     #label, #fe {
-        width: 15%;
+        width: 20%;
     }
 
-    #unit, #qty {
+    #qty {
         width: 5%;
     }
 
-    #feValue, #total {
+    #feValue, #unit, #total {
         width: 10%;
     }
 
     .btnRemove {
-        height: 3rem;
-        width: 3rem;
+        height: 2rem;
+        width: 2rem;
 
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 800;
 
         border-radius: 50%;
 
-        border: 1px solid black;
-        background-color: red;
+        cursor: pointer;
+
+        border: 1px solid #ff0000;
+        background-color: #ff0000;
         color: white;
+
+        &:hover {
+            background-color: #cc0000;
+        }
     }
 }

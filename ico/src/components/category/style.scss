@@ -4,34 +4,53 @@
     width: 80vw;
     margin-bottom: 10vh;
 
-    .titleContainer {
-        padding: .5rem 3rem;
+    .banner {
+        height: 10vh;
+        padding: 1rem 3rem;
 
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
-        background-color: white;
-        color: $primary-color;
+        border-radius: 5%;
+
+        background-color: $ortec-color;
+        color: $background-color;
+
+        .titleContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-evenly;
+
+          > * {
+            margin-top: 5px;
+          }
+        }
 
         .btnAdd {
-            height: 3rem;
-            width: 3rem;
+            height: 2rem;
+            width: 2rem;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            color: white;
-            background-color: $primary-color;
+            color: $background-color;
+            background-color: $text-color;
+            border: 1px solid $text-color;
             
             border-radius: 50%;
             cursor: pointer;
             
             > span {
-              font-size: 2.5rem;
+              font-size: 1.5rem;
               font-weight: 800;
+            }
+
+            &:hover {
+              background-color: $gray-medium;
             }
           }
     }
