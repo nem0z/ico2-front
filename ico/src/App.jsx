@@ -22,7 +22,7 @@ function App() {
 
 		setLines(prev => 
 			Array(Math.max(...categories.map(c => c.id)) + 1)
-			.fill([]).map((_, i) => prev[i] ?? [])
+			.fill([]).map((_, i) => categories.find(c => c.id == i) ? prev[i] : [])
 		);
 	}, [categories]);
 
