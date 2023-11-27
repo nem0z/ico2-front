@@ -30,11 +30,11 @@ function Item({category, onRemove, onCalc}) {
 	}, [feSelected]);
 
 	useEffect(() => {
-		setTotal(parseFloat(feValue) * parseFloat(qty));
+		setTotal((parseFloat(feValue) || 0) * (parseFloat(qty) || 0));
 	}, [feValue, qty]);
 
 	useEffect(() => {
-		onCalc({ total: total });
+		onCalc({ label: labelRef.current?.value, fe: feSelected, feValue: feValue, qty: qty, total: total });
 	}, [total])
 
 	return (
