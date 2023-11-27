@@ -13,14 +13,17 @@ function App() {
 	const [categories, setCategories] = useState([]);
 	const [lines, setLines] = useState([]);
 
-	const calc = (category, lines) => {
-		setLines(prev => prev.map((x, c) => category == c ? lines : x));
+	const calc = (category, updatedLines) => {
+		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
 	}
 
 	useEffect(() => {
 		if(categories.length <= 0) return;
 
-		setLines(Array(Math.max(...categories.map(c => c.id))).fill([]));
+		setLines(prev => 
+			Array(Math.max(...categories.map(c => c.id)) + 1)
+			.fill([]).map((_, i) => prev[i] ?? [])
+		);
 	}, [categories]);
 
 	useEffect(() => {
