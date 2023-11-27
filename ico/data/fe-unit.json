@@ -1,18 +1,23 @@
 [   
     { "fe": 0, "unit": "Jours", "value": 13 },
+    { "fe": 0, "unit": "K.Euro", "value": 100 },
     { "fe": 1, "unit": "Jours", "value": 16 },
     { "fe": 2, "unit": "Jours", "value": 6.5 },
     { "fe": 3, "unit": "Jours", "value": 1.3 },
 
-    { "fe": 4, "unit": "Km", "value": 0.1 },
-    { "fe": 5, "unit": "Km", "value": 0.05 },
-    { "fe": 6, "unit": "Km", "value": 0.09 },
-    { "fe": 7, "unit": "Km", "value": 0.01 },
+    { "fe": 4, "unit": "Km", "value": 0.199 },
+    { "fe": 5, "unit": "Km", "value": 0.145 },
+    { "fe": 27, "unit": "Km", "value": 0.118 },
 
+    { "fe": 5, "unit": "K.Euro", "value": 590 },
+    { "fe": 6, "unit": "Km", "value": 0.225 },
+    { "fe": 7, "unit": "Km", "value": 0.103 },
 
-    { "fe": 8, "unit": "KwH", "value": 0.0012 },
+    { "fe": 29, "unit": "K.Euro", "value": 560 },
+
+    { "fe": 8, "unit": "KwH", "value": 0.0520 },
     { "fe": 9, "unit": "KwH PCS", "value": 0.213 },
-
+    { "fe": 28, "unit": "K.Euro", "value": 360 },
 
     { "fe": 10, "unit": "Kg", "value": 5.5 },
     { "fe": 11, "unit": "K.Euro", "value": 700 },
