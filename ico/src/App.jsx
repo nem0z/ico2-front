@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Category from './components/category/category';
 import SelectCategories from './components/selectCategories/selectCategories';
 
-import { getCategories } from '/client/fakeClient.js';
 import { sumOf } from './utils.js';
 
 function App() {
@@ -17,12 +16,6 @@ function App() {
 	const calc = (category, lines) => {
 		setLines(prev => prev.map((x, c) => category == c ? lines : x));
 	}
-
-	useEffect(() => {
-		getCategories().then(categories => 
-			setCategories(categories.sort((a,b) => a.order - b.order))	
-		);
-	}, []);
 
 	useEffect(() => {
 		if(categories.length <= 0) return;
