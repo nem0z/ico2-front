@@ -2,7 +2,7 @@ import './style.scss';
 
 import { useEffect, useState } from 'react';
 
-import { getCategories } from '../../../client/fakeClient.js';
+import { getCategories } from '/client/fakeClient.js';
 
 function SelectCategories({onSelect}) {
 	const [categories, setCategories] = useState([]);
@@ -11,7 +11,11 @@ function SelectCategories({onSelect}) {
 		setCategories(prev => prev.map(c => c.id == id ? {...c, checked: !c.checked}: c));
 
 	useEffect(() => {
-		getCategories().then(data => setCategories(data.map(c => ({...c, checked: false}))));
+		getCategories()
+		.then(data => setCategories(
+			data.map(c => ({...c, checked: false}))
+			.sort((a,b) => a.order - b.order)
+		));
 	}, []);
 
 	useEffect(() => {
