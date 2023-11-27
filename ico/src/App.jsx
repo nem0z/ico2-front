@@ -54,6 +54,7 @@ function App() {
 							key={c.id} 
 							category={c.id} 
 							categoryName={c.name} 
+							appLines={lines[c.id] || []}
 							onCalc={lines => calc(c.id, lines)}
 						/>
 					)

@@ -6,14 +6,14 @@ import { getFe, getFeUnits } from '/client/fakeClient.js';
 
 import { unitCo2 } from '/src/var.js';
 
-function Item({category, onRemove, onCalc}) {
+function Item({category, parentItem, onRemove, onCalc}) {
 
 	const labelRef = useRef(null);
 
 	const [fe, setFe] = useState([]);
-	const [feSelected, setFeSelected] = useState(null);
-	const [feValue, setFeValue] = useState(0);
-	const [qty, setQty] = useState(1);
+	const [feSelected, setFeSelected] = useState(parentItem.fe);
+	const [feValue, setFeValue] = useState(parentItem.feValue);
+	const [qty, setQty] = useState(parentItem.qty);
 	const [total, setTotal] = useState(0);
 	const [feUnits, setFeUnits] = useState([]);
 
