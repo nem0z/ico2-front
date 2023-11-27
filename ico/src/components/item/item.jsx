@@ -52,6 +52,8 @@ function Item({category, onRemove, onCalc}) {
 				}
 			</select>
 
+			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
+
 			<select id="unit" onChange={e => setFeValue(e.target.value)}>
 				{
 					feUnits.length > 0 ?
@@ -61,9 +63,8 @@ function Item({category, onRemove, onCalc}) {
 				}
 			</select>
 
-			<input type="text" id="feValue" value={`${feValue} ${unitCo2}`} readOnly />
-			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
 			<input type="text" id="total" value={`${Math.round(total)} ${unitCo2}`} readOnly />
+			{/* <input type="text" id="feValue" value={`${feValue} ${unitCo2}`} readOnly /> */}
 
 			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
