@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { getFe, getFeUnits } from '/client/fakeClient.js';
 
+import { unitCo2 } from '/src/var.js';
+
 function Item({category, onRemove, onCalc}) {
 
 	const labelRef = useRef(null);
@@ -59,9 +61,9 @@ function Item({category, onRemove, onCalc}) {
 				}
 			</select>
 
-			<input type="text" id="feValue" value={`${feValue} k.co²`} readOnly />
+			<input type="text" id="feValue" value={`${feValue} ${unitCo2}`} readOnly />
 			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
-			<input type="text" id="total" value={`${Math.round(total)} k.co²`} readOnly />
+			<input type="text" id="total" value={`${Math.round(total)} ${unitCo2}`} readOnly />
 
 			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
