@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { getFe, getFeUnits } from '/client/fakeClient.js';
 
+import { unitCo2 } from '/src/var.js';
+
 function Item({category, onRemove, onCalc}) {
 
 	const labelRef = useRef(null);
