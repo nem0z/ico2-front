@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import Category from './components/category/category';
 import SelectCategories from './components/selectCategories/selectCategories';
 
-import { sumOf } from './utils.js';
+import { sumOf } from '/src/utils.js';
+import { unitCo2 } from '/src/var.js';
 
 function App() {
 
@@ -60,7 +61,7 @@ function App() {
 			</section>
 
 			<section className='total'>
-				<p><span className='bold'>{ Math.round(total) }</span> k.co²</p>
+				<p><span className='bold'>{ Math.round(total) }</span> {unitCo2}</p>
 			</section>
 		</section>
 	);

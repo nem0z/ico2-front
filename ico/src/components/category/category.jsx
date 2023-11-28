@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Item from '/src/components/item/item';
 
 import { sumOf } from '/src/utils.js';
+import { unitCo2 } from '/src/var.js';
 
 
 function Category({category, categoryName, onCalc}) {
@@ -26,7 +27,7 @@ function Category({category, categoryName, onCalc}) {
 			<div className='banner'>
 				<div className='titleContainer'>
 					<h2>{ categoryName }</h2>
-					<p><span className='bold'>{Math.round(total)}</span> k.co²</p>
+					<p><span className='bold'>{Math.round(total)}</span> {unitCo2}</p>
 				</div>
 				
 				<div className='btnAdd' onClick={addLine}>
