@@ -14,9 +14,8 @@ function App() {
 	const [categories, setCategories] = useState([]);
 	const [lines, setLines] = useState([]);
 
-	const calc = (category, updatedLines) => {
+	const calc = (category, updatedLines) =>
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
-	}
 
 	useEffect(() => {
 		if(categories.length <= 0) return;
@@ -25,9 +24,11 @@ function App() {
 			Array(Math.max(...categories.map(c => c.id)) + 1)
 			.fill([]).map((_, i) => prev[i] ?? [])
 		);
+		
 	}, [categories]);
 
 	useEffect(() => {
+		console.log("Lines from app totla", lines);
 		setTotal(
 			Array.from(lines.entries()).reduce((acc, [i, v]) => {
 				return acc + (categories.find(c => c.id == i) ? sumOf(v, "total") : 0);
@@ -49,7 +50,8 @@ function App() {
 
 			<section>
 				{
-					categories.map(c => 
+					categories.map(c =>
+						c.checked ?
 						<Category 
 							key={c.id} 
 							category={c.id} 
@@ -57,6 +59,7 @@ function App() {
 							appLines={lines[c.id] || []}
 							onCalc={lines => calc(c.id, lines)}
 						/>
+						: null
 					)
 				}
 			</section>
