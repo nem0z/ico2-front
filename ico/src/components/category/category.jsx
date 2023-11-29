@@ -18,12 +18,9 @@ function Category({category, categoryName, appLines, onCalc}) {
 	const handleLine = (index, line) => setLines(prev => prev.map((l, i) => i==index ? line : l));
 
 	useEffect(() => {
-		console.log(appLines);
-	}, []);
-
-	useEffect(() => {
 		setTotal(sumOf(lines, "total"));
 		onCalc(lines);
+		console.log(lines);
 	}, [lines]);
 
 	return (

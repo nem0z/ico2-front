@@ -36,7 +36,7 @@ function Item({category, parentItem, onRemove, onCalc}) {
 
 	useEffect(() => {
 		onCalc({ label: label, fe: feSelected, feValue: feValue, qty: qty, total: total });
-	}, [label, total])
+	}, [label, total]);
 
 	return (
 		<section className='item'>
