@@ -13,7 +13,7 @@ function Category({category, categoryName, appLines, onCalc}) {
 	const [lines, setLines] = useState(appLines);
 	const [total, setTotal] = useState(0);
 
-	const addLine = () => setLines(prev => [...prev, { total: 0 }]);
+	const addLine = () => setLines(prev => [...prev, { label: "", fe: "", feValue: "", qty: 1, total: 0 }]);
 	const removeLine = index => setLines(prev => prev.filter((_, i) => i !== index));
 	const handleLine = (index, line) => setLines(prev => prev.map((l, i) => i==index ? line : l));
 

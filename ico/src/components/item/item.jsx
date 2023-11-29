@@ -8,8 +8,7 @@ import { unitCo2 } from '/src/var.js';
 
 function Item({category, parentItem, onRemove, onCalc}) {
 
-	const labelRef = useRef(null);
-
+	const [label, setLabel] = useState(parentItem.label);
 	const [fe, setFe] = useState([]);
 	const [feSelected, setFeSelected] = useState(parentItem.fe);
 	const [feValue, setFeValue] = useState(parentItem.feValue);
@@ -36,25 +35,23 @@ function Item({category, parentItem, onRemove, onCalc}) {
 	}, [feValue, qty]);
 
 	useEffect(() => {
-		onCalc({ label: labelRef.current?.value, fe: feSelected, feValue: feValue, qty: qty, total: total });
-	}, [total])
+		onCalc({ label: label, fe: feSelected, feValue: feValue, qty: qty, total: total });
+	}, [label, total])
 
 	return (
 		<section className='item'>
-			<input type="text" id="label" placeholder='Libellé de la ligne' ref={labelRef} />
+			<input type="text" id="label" placeholder='Libellé de la ligne' onChange={e => setLabel(e.target.value)} value={label} />
 
-			<select id="fe" onChange={e => setFeSelected(e.target.value)}>
+			<select id="fe" onChange={e => setFeSelected(e.target.value)} value={feSelected} >
 				<option value="">---</option>
 				{
-					fe.map(x =>
-						<option key={x.id} value={x.id}>{x.label}</option>
-					)
+					fe.map(x => <option key={x.id} value={x.id}>{x.label}</option>)
 				}
 			</select>
 
-			<input type="text" id="qty" defaultValue="1" onChange={e => setQty(e.target.value)} />
+			<input type="text" id="qty" onChange={e => setQty(e.target.value)} value={qty} />
 
-			<select id="unit" onChange={e => setFeValue(e.target.value)}>
+			<select id="unit" onChange={e => setFeValue(e.target.value)} value={feValue}>
 				{
 					feUnits.length > 0 ?
 					feUnits.map(x =>
@@ -64,7 +61,6 @@ function Item({category, parentItem, onRemove, onCalc}) {
 			</select>
 
 			<input type="text" id="total" value={`${Math.round(total)} ${unitCo2}`} readOnly />
-			{/* <input type="text" id="feValue" value={`${feValue} ${unitCo2}`} readOnly /> */}
 
 			<button className="btnRemove" type="button" onClick={onRemove}>X</button>
 		</section>
