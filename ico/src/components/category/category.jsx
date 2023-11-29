@@ -8,18 +8,19 @@ import { sumOf } from '/src/utils.js';
 import { unitCo2 } from '/src/var.js';
 
 
-function Category({category, categoryName, onCalc}) {
-
-	const [lines, setLines] = useState([]);
+function Category({category, categoryName, appLines, onCalc}) {
+	
+	const [lines, setLines] = useState(appLines);
 	const [total, setTotal] = useState(0);
 
-	const addLine = () => setLines(prev => [...prev, { total: 0 }]);
+	const addLine = () => setLines(prev => [...prev, { label: "", fe: "", feValue: "", qty: 1, total: 0 }]);
 	const removeLine = index => setLines(prev => prev.filter((_, i) => i !== index));
 	const handleLine = (index, line) => setLines(prev => prev.map((l, i) => i==index ? line : l));
 
 	useEffect(() => {
 		setTotal(sumOf(lines, "total"));
 		onCalc(lines);
+		console.log(lines);
 	}, [lines]);
 
 	return (
@@ -37,10 +38,11 @@ function Category({category, categoryName, onCalc}) {
 
 			<div className="categoryItems">
 				{
-					lines.map((_, i) => 
+					lines.map((v, i) => 
 						<Item 
 							key={i} 
 							category={category}
+							parentItem={v}
 							onRemove={() => removeLine(i)}
 							onCalc={line => handleLine(i, line)}
 						/>

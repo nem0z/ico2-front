@@ -19,7 +19,7 @@ function SelectCategories({onSelect}) {
 	}, []);
 
 	useEffect(() => {
-		onSelect(categories.filter(c => c.checked));
+		onSelect(categories);
 	}, [categories]);
 
 	return (
