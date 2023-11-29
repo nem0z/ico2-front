@@ -18,17 +18,10 @@ function App() {
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
 
 	useEffect(() => {
-		if(categories.length <= 0) return;
-
-		setLines(prev => 
-			Array(Math.max(...categories.map(c => c.id)) + 1)
-			.fill([]).map((_, i) => prev[i] ?? [])
-		);
-		
+		setLines(prev => categories.map(c => prev[c.id] ?? []));
 	}, [categories]);
 
 	useEffect(() => {
-		console.log("Lines from app totla", lines);
 		setTotal(
 			Array.from(lines.entries()).reduce((acc, [i, v]) => {
 				return acc + (categories.find(c => c.id == i) ? sumOf(v, "total") : 0);
