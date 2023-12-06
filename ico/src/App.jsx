@@ -28,6 +28,8 @@ function App() {
 				return acc + (categories.find(c => c.id == i) ? sumOf(v, "total") : 0);
 			}, 0)
 		);
+
+		if(lines.length > 0) sessionStorage.setItem("lines", JSON.stringify(lines));
 	}, [lines]);
 
 	return (
