@@ -16,8 +16,10 @@ function App() {
 
 	const calc = (category, updatedLines) =>
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
-
+		
 	useEffect(() => {
+		const storedLines = JSON.parse(sessionStorage.getItem('lines')) || [];
+		setLines(categories.map((_, index) => storedLines[index] || []));
 	}, [categories.length]);
 
 	useEffect(() => {
