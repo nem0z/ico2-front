@@ -18,8 +18,7 @@ function App() {
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
 
 	useEffect(() => {
-		setLines(prev => categories.map(c => prev[c.id] ?? []));
-	}, [categories]);
+	}, [categories.length]);
 
 	useEffect(() => {
 		setTotal(
