@@ -23,6 +23,8 @@ function App() {
 	}, [categories.length]);
 
 	useEffect(() => {
+		if(categories.length <= 0) return;
+
 		setTotal(
 			Array.from(lines.entries()).reduce((acc, [i, v]) => {
 				return acc + (categories.find(c => c.id == i) ? sumOf(v, "total") : 0);
