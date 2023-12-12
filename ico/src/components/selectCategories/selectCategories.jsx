@@ -11,10 +11,12 @@ function SelectCategories({onSelect}) {
 		setCategories(prev => prev.map(c => c.id == id ? {...c, checked: !c.checked}: c));
 
 	useEffect(() => {
+		const loadedCategories = JSON.parse(sessionStorage.getItem('categories'));
+
 		getCategories()
 		.then(data => setCategories(
-			data.map(c => ({...c, checked: false}))
-			.sort((a,b) => a.order - b.order)
+			data.map(c => ({...c, checked: loadedCategories?.find(x => x.id == c.id)?.checked ?? false}))
+				.sort((a,b) => a.order - b.order)
 		));
 	}, []);
 
