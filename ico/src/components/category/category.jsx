@@ -20,7 +20,6 @@ function Category({category, categoryName, appLines, onCalc}) {
 	useEffect(() => {
 		setTotal(sumOf(lines, "total"));
 		onCalc(lines);
-		console.log(lines);
 	}, [lines]);
 
 	return (
