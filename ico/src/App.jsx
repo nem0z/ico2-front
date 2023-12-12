@@ -29,8 +29,7 @@ function App() {
 			}, 0)
 		);
 
-		if(lines.length > 0) sessionStorage.setItem("lines", JSON.stringify(lines));
-	}, [lines]);
+	}, [lines, categories]);
 
 	return (
 		<section className='ICO'>
