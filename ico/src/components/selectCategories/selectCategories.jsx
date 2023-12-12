@@ -20,6 +20,7 @@ function SelectCategories({onSelect}) {
 
 	useEffect(() => {
 		onSelect(categories);
+		if(categories.length > 0) sessionStorage.setItem('categories', JSON.stringify(categories));
 	}, [categories]);
 
 	return (
