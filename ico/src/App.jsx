@@ -28,6 +28,7 @@ function App() {
 				return acc + (categories.find(c => c.id == i) ? sumOf(v, "total") : 0);
 			}, 0)
 		);
+		sessionStorage.setItem("lines", JSON.stringify(lines));
 
 	}, [lines, categories]);
 
