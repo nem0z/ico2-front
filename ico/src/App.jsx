@@ -11,11 +11,23 @@ import { unitCo2 } from '/src/var.js';
 function App() {
 
 	const [total, setTotal] = useState(0);
+	const [selectKey, setSelectKey] = useState(1);
 	const [categories, setCategories] = useState([]);
 	const [lines, setLines] = useState([]);
 
 	const calc = (category, updatedLines) =>
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
+
+	const resetForm = () => {
+		if(!confirm("Êtes-vous de vouloir réinitialiser le formulaire ?")) return;
+
+		// reset values in sessionStorage
+		sessionStorage.removeItem("lines");
+		sessionStorage.removeItem("categories");
+
+		// force selectCategories to re-render and trigger app reload
+		setSelectKey(prev => prev+1);
+	}
 		
 	useEffect(() => {
 		if(categories.length <= 0) return setLines(JSON.parse(sessionStorage.getItem('lines')) ?? []);
@@ -36,15 +48,19 @@ function App() {
 
 	return (
 		<section className='ICO'>
-			<h1>
-				<span className='bold'> I</span>mpact 
-				<span className='bold'> C</span>arbon 
-				<span className='bold'> O</span>rtec 
-				<span className='bold'> O</span>ptimization 
-				<span className='bold'> (ICO²)</span>
-			</h1>
+			<section className='appHeader'>
+				<h1>
+					<span className='bold'> I</span>mpact 
+					<span className='bold'> C</span>arbon 
+					<span className='bold'> O</span>rtec 
+					<span className='bold'> O</span>ptimization 
+					<span className='bold'> (ICO²)</span>
+				</h1>
 
-			<SelectCategories onSelect={setCategories} />
+				<button onClick={resetForm}>Reset</button>
+			</section>
+
+			<SelectCategories onSelect={setCategories} key={selectKey} />
 
 			<section>
 				{
