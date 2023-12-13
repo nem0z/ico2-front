@@ -32,23 +32,62 @@
         }
     }
 
-    .total {
-        width: 10rem;
-
-        padding: 1.2rem 2.5rem 1.2rem 2rem;
-
-        background-color: $ortec-color;
-
-        border-radius: 10%;
+    .result {
 
         display: flex;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
 
-        p {
+        .total {
+            width: 10rem;
+    
+            padding: 1.2rem 2.5rem 1.2rem 2rem;
+    
+            background-color: $ortec-color;
+    
+            border-radius: 10%;
+    
+            display: flex;
+            align-items: center;
+    
+            p {
+                color: $background-color;
+                
+                font-size: x-large;
+                font-weight: 700;
+            }
+        }
+
+        .btnExportPdf {
+            all: inherit;
+            cursor: pointer;
+
+            width: 10rem;
+            padding: 1.2rem 2.5rem 1.2rem 2rem;
+            border-radius: 10%;
+
+            background-color: $ortec-color;
             color: $background-color;
-            
+
             font-size: x-large;
             font-weight: 700;
+    
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                transform: scale(1.02);
+            }
         }
+    }
+
+    .exportWrapper {
+        margin: 3vh 0;
+
+        background-color: white;
+        
+        border: 1px solid black;
+        border-radius: 45px;
     }
 }

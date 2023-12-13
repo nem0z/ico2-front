@@ -2,8 +2,11 @@ import './styles/App.scss';
 
 import { useEffect, useState } from 'react';
 
+import { usePDF } from 'react-to-pdf';
+
 import Category from './components/category/category';
 import SelectCategories from './components/selectCategories/selectCategories';
+import PdfExport from './components/export/pdf';
 
 import { sumOf } from '/src/utils.js';
 import { unitCo2 } from '/src/var.js';
@@ -15,8 +18,12 @@ function App() {
 	const [categories, setCategories] = useState([]);
 	const [lines, setLines] = useState([]);
 
+	const { toPDF, targetRef } = usePDF({filename: 'export.pdf'});
+
 	const calc = (category, updatedLines) =>
 		setLines(prev => prev.map((x, c) => category == c ? updatedLines : x));
+
+	const getPdfData = () => Object.fromEntries(categories.filter(c => c.checked).map(c => [c.name, lines[c.id]]));
 
 	const resetForm = () => {
 		if(!confirm("Êtes-vous de vouloir réinitialiser le formulaire ?")) return;
@@ -62,6 +69,7 @@ function App() {
 
 			<SelectCategories onSelect={setCategories} key={selectKey} />
 
+
 			<section>
 				{
 					categories.map(c =>
@@ -78,9 +86,20 @@ function App() {
 				}
 			</section>
 
-			<section className='total'>
-				<p><span className='bold'>{ Math.round(total) }</span> {unitCo2}</p>
+			<section className='result'>
+				<section className='total'>
+					<p><span className='bold'>{ Math.round(total) }</span> {unitCo2}</p>
+				</section>
+
+				<button className='btnExportPdf' onClick={toPDF}>Export PDF</button>
 			</section>
+
+			
+
+			<section className='exportWrapper'>
+				<PdfExport data={getPdfData()} forwardRef={targetRef} />
+			</section>
+
 		</section>
 	);
 }
