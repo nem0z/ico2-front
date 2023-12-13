@@ -1,3 +1,5 @@
 const unitCo2 = "KCO²";
 
-export { unitCo2 };
+const methodText = `La méthodologie de calcul de l'impact carbone, selon les normes de l'ADEME, s'articule autour d'une approche exhaustive. Elle commence par définir précisément le périmètre du chantier, englobant toutes les phases, des matériaux aux déplacements. Les données, couvrant énergies, transports et matériaux, sont ensuite collectées minutieusement. En classant les émissions en scopes 1, 2 et 3, on garantit une évaluation complète. Les facteurs d'émissions spécifiques à chaque source, recommandés par l'ADEME, permettent de quantifier les émissions. Ce calcul intègre également des mesures de compensation et de réduction pour minimiser l'impact net. Les résultats sont présentés de manière accessible, mettant en lumière les principales sources et les actions possibles. Un suivi régulier assure l'ajustement des données et des calculs au fil de l'évolution du chantier. La méthodologie, conforme aux normes, vise à garantir une évaluation fiable et transparente de l'empreinte carbone du chantier.`;
+
+export { unitCo2, methodText };
